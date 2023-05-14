@@ -1,0 +1,30 @@
+logging:
+  level:
+    com.nrslib: trace
+
+server:
+  port: 8080
+
+spring:
+  application:
+    name: clean-impl
+  datasource:
+    url: jdbc:h2:mem:test
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+  jpa:
+    generate-ddl: true
+  h2:
+    console:
+      enabled: true
+  mvc:
+    hiddenmethod:
+      filter:
+        enabled: true
+
+springdoc:
+  packages-to-scan: com.nrslib
+  paths-to-match: "/api/**"
+  default-consumes-media-type: application/json
+  default-produces-media-type: application/json
